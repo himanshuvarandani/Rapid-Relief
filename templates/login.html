@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In</title>
+    </head>
+    <body>
+        <h1>Sign In</h1>
+        <form action="{{ url_for('login') }}" method="post">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="text" name="password" required>
+            </div>
+            <input type="submit" value="submit">
+        </form>
+        <p>New user? Click here to <a href="{{ url_for('register') }}">register</a></p>
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>
