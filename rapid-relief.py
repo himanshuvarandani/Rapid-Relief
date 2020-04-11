@@ -31,7 +31,7 @@ englishBot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorag
 disaster_words = ["disaster","calamity" , "help", "require", "danger", "catastrophe","adversity"]
 accident_words = ["accident", "injured", "fall","bleeding","save", "blood", "bleed", "car-accident"]
 
-disasters = "1. Flood  2.Tsunami  3. Earthquake  4.Hurricane   5. Cyclones   6. Mudslides" 
+disasters = "1. Flood   2.Tsunami   3. Earthquake   4.Hurricane   5. Cyclones   6. Mudslides" 
 
 @app.route("/Chatbot")
 def Chatbot():
@@ -44,27 +44,58 @@ def get_bot_response():
     userText = request.args.get('msg')
     # userText = input("Enter something")
     if any(word in userText for word in disaster_words):
-        help = "Sending for help ... You are in a disaster SELECT THE DISASTER " , disasters
-     
-        return str(help) # calling Aid
+        help = "Searching for avaliable help ... Are are in a disaster?  SELECT THE DISASTER  Or met an accident " ,disasters
+        msg = str(help)
+        
+        return msg # calling Aid
     if str(userText.lower()) == "flood":
-        return "Precautions of flood"    
+        return """FLOOD PRECAUTIONS : Do not walk, swim, or drive through flood waters. 
+                Turn Around, Don't Drown! ...  \n
+                If you are on a bridge or near it: stay off of bridges and fast-moving water.\n
+                Turn off electricity and gas supply when evacuating\n
+                Do not walk through flooded areas. ...
+                Help is on the way....
+                Contacting the nearest rescue man
+                """    
     elif str(userText.lower()) == "tsunami":
-        return "Precautions of tsunami"
+        return """ TAKE THESE PRECAUTIONS: - First, protect yourself from an Earthquake. ...
+                    Get to high ground as far inland as possible
+                    Listen to emergency information and alerts.
+                    Move to higher ground.
+                    Stay away from coast, tidal estuaries, rivers and streams; 
+                    if at sea, stay there until “all clear” is issued.      Help is on its way...."""
+    
     elif str(userText.lower()) == "earthquake":
-        return  "Precautions of eathquake"
+        return  """FOLLOW   THESE  TO  BE  SAFE , Mind Me
+        Drop down and take cover under a desk or table. ...
+        Stay inside until the shaking stops and it is safe to exit.
+        Try to keep your cool and don't run around here and there, come out of the building if you can safely.
+        Tip: A doorway is the safest place to be during an earthquake if you have a somewhat old house!
+        Help is on its way , meanwhile you can talk to me :) """
+    
     elif str(userText.lower()) == "cyclones":
-        return "Precautions of Cyclones"
+        return """ Cyclones : Don't go outside until officially advised it is safe. 
+        Check for gas leaks.  Beware of damaged POWER LINES, bridges, BUILDINGS, trees, and don't enter FLOODWATER.
+        REQUEST SENT :)  for your help!  DO NOT PANIC ,
+        HELP ON ITS WAY!
+        """
+    
+    
     elif str(userText.lower()) == "mudslides":    
-        return "Precautions of mudslides"
-             # bool = Fals
+        return """FOLLOW THESE STEPS: Move away quickly from the path of the mudflow or landslide to another location.
+        Do not try to stay close and take photographs. Landslide debris move from uphill to downhill, therefore, avoid low-lying areas or valleys.
+        If there is a way to sound an alarm, do so.
+        Listen and look out for signs of further flows in that area, as the flowing debris often knock against surrounding slopes and sets off new flows.
+        """
+            
+    
+    
     elif any(word in userText for word in accident_words):
-        help = "Sending for help ....You met an accident"
-        return str(help)
-            # print ('U met an accident')
-            # print('Sending for help ')
-            # print('info...')
-            # bool = False
+        help = "Sending help request .... you met an accident!"
+
+        return """Do not panic , Stay Calm ... Help on its way...
+        If injured too much try to talk and breathe calmly..."""
+            
     else:
         return str(englishBot.get_response(userText))
 

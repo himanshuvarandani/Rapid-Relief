@@ -26,3 +26,12 @@
     padding: 10px;
     border-radius: 2px;
 }
+.h1 , h1{
+    color: #9f6363;
+}
+#keyword{
+    color:rgb(228, 34, 17);
+}
+#chatbox{
+    background-color: beige;
+}
