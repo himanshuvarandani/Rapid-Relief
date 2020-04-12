@@ -66,6 +66,9 @@ def lerner_logout():
     logout_user()
     return redirect(url_for('index'))
 
+@app.route('/aid')
+def aid():
+    return render_template("firstAid.html")
 
 englishBot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 
