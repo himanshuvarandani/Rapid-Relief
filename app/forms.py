@@ -28,3 +28,9 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             raise ValidationError('Please Use a different email address')
 
+
+class VolunteerForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    address = StringField('Address', validators=[DataRequired()])
+    submit = SubmitField('Apply')

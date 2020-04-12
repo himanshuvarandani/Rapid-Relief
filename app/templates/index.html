@@ -25,10 +25,10 @@
 
   <div id="navbarExampleTransparentExample" class="navbar-menu">
     <div class="navbar-start">
-        <a class="navbar-item" href="">
+        <a class="navbar-item" href="/index">
         Home
         </a>
-        <a class="navbar-item" href="#about">
+        <a class="navbar-item" href="#about_us">
         About Us
         </a>
         <a class="navbar-item" href="/aid">
@@ -41,18 +41,15 @@
             Training and Certificate
          </a>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" href="">
+        <a class="navbar-link" href="/volunteer">
           Volunteer
         </a>
         <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item" href="">
+          <a class="navbar-item" href="/volunteer#apply">
             Apply For Volunteer
           </a>
-          <a class="navbar-item" href="">
+          <a class="navbar-item" href="/volunteer#volunteer_role">
             Role of Volunteer
-          </a>
-          <a class="navbar-item" href="">
-            Log In as Volunteer
           </a>
           <hr class="navbar-divider">
           <a class="navbar-item" href="">
@@ -102,6 +99,15 @@
 </nav>
 
 
+<div class="container">
+  {% with messages=get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-info" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
 <section class="hero is-medium is-primary is-bold">
   <div class="hero-body">
     <div class="container">
@@ -116,7 +122,7 @@
     </div>
   </div>
 </section>
-<section class="section">
+<section class="section" id="about_us">
     <div class="container">
         <h1 class="title is-2 has-text-primary has-text-centered" id ="about">ABOUT US</h1><br>
         <p class="has-text-centered">We are providing help for all people who are in trouble</p><br><br><br>
@@ -148,8 +154,8 @@
     </div>
 </section>
 <br><br>
-<section class="section" style="background-color: gold">
-<div class="container" id = "donate">
+<section class="section" style="background-color: gold" id="donate">
+<div class="container">
   <article class="message">
     <div class="message-header">
         <p>

@@ -1,5 +1,5 @@
 from app import app, db, login
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, VolunteerForm
 from app.models import User
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
@@ -36,7 +36,7 @@ def lerner_reg():
 
     return render_template('lerner_reg.html', form=form)
 
-
+@app.route('/login', methods=["GET", "POST"])
 @app.route('/lerner_login', methods=["GET", "POST"])
 def lerner_login():
     form = LoginForm()
@@ -69,6 +69,21 @@ def lerner_logout():
 @app.route('/aid')
 def aid():
     return render_template("firstAid.html")
+
+@app.route('/volunteer', methods=["GET", "POST"])
+def volunteer():
+    form = VolunteerForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=current_user.username).first()
+        user.username = form.username.data
+        user.email = form.email.data
+        user.address = form.address.data
+        user.volunteer_status = True
+        db.session.commit()
+        flash("You are registered as a volunteer")
+        return redirect('/index')
+    return render_template('volunteer.html', form=form)
+
 
 englishBot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 
