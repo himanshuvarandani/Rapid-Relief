@@ -112,20 +112,16 @@
           {{ form.hidden_tag() }}
           {{ wtf.form_errors(form, hiddens="only") }}
           <div class="field">
-            <div class="control has-icons-left has-icons-right">
-              {{ wtf.form_field(form.username, class="input is-info") }}
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-            </div>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            {{ wtf.form_field(form.username, class="input is-info") }}
           </div>
           <div class="field">
-            <div class="control has-icons-left has-icons-right">
-              {{ wtf.form_field(form.password, class="input is-info") }}
-              <span class="icon is-small is-left">
-                <i class="fas fa-key"></i>
-              </span>
-            </div>
+            <span class="icon is-small is-left">
+              <i class="fas fa-key"></i>
+            </span>
+            {{ wtf.form_field(form.password, class="input is-info") }}  
           </div>
           <div class="field">
             {{ wtf.form_field(form.remember_me, class="input is-info") }}
