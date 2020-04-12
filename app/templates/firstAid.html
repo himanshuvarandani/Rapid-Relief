@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -9,144 +9,120 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>First Aid</title>
     <style>
-        strong{
-            color:#b11515;
-        }
+      strong{
+        color:#b11515;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar is-transparent">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="">
-                <h1 class="title is-4" style="color:red">RAPID RELIEF</h1>
-          </a>
-          <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <h1 class="title is-4" style="color:red">RAPID RELIEF</h1>
+        </a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-          <div class="navbar-start">
-              <a class="navbar-item" href="/index">
-              Home
-              </a>
-              <a class="navbar-item" href="/index#about_us">
-              About Us
-              </a>
-              <a class="navbar-item" href="/aid">
-              First Aid
-               </a>
-              <a class="navbar-item" href="/index#donate">
-              Donation
-               </a>
-                <a class="navbar-item" href="">
-                  Training and Certificate
-               </a>
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link" href="/volunteer">
-                Volunteer
-              </a>
-              <div class="navbar-dropdown is-boxed">
-                <a class="navbar-item" href="/volunteer#apply">
-                  Apply For Volunteer
-                </a>
-                <a class="navbar-item" href="/volunteervolunteer_role">
-                  Role of Volunteer
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item" href="">
-                  Elements
-                </a>
-                <a class="navbar-item is-active" href="">
-                  Components
-                </a>
-              </div>
+      </div>
+    
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/index">Home</a>
+          <a class="navbar-item" href="/index#about_us">About Us</a>
+          <a class="navbar-item" href="/aid">First Aid</a>
+          <a class="navbar-item" href="/index#donate">Donation</a>
+          <a class="navbar-item" href="">Training and Certificate</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="/volunteer">Volunteer</a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="/volunteer#apply">Apply For Volunteer</a>
+              <a class="navbar-item" href="/volunteer#volunteer_role">Role of Volunteer</a>
             </div>
-            {% if current_user.is_anonymous %}
-              <a class="navbar-item" href="/lerner_login">
-                Login
-              </a>
-            {% else %}
-              <a class="navbar-item" href="/lerner_logout">
-                Logout
-              </a>
-            {% endif %}
           </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                    <span class="icon">
-                      <i class="fas fa-shopping-cart"></i>
-                    </span>
-                    <span>
-                      Shop
-                    </span>
-                  </a>
-                </p>
-                <p class="control">
-                  <a class="button is-primary" href="/Chatbot">
-                    <span class="icon">
-                      <i class="fas fa-heart"></i>
-                    </span>
-                    <span>General Help</span>
-                  </a>
-                </p>
-              </div>
+          {% if current_user.is_anonymous %}
+            <a class="navbar-item" href="/lerner_login">Login</a>
+          {% else %}
+            <a class="navbar-item" href="/lerner_logout">Logout</a>
+          {% endif %}
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+                  <span class="icon">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                  <span>Shop</span>
+                </a>
+              </p>
+              <p class="control">
+                <a class="button is-primary" href="/Chatbot">
+                  <span class="icon">
+                    <i class="fas fa-heart"></i>
+                  </span>
+                  <span>General Help</span>
+                </a>
+              </p>
             </div>
           </div>
         </div>
-      </nav>
-      <div class="container" style="margin-top: 100px;">
-          <h1 style = "font-size: 30px;"> <strong> First Aid Steps</strong></h1>
-            <p style="font-family: Muli,sans-serif;" > By administering immediate care during an emergency, you can help an ill or injured person before EMS, Emergency Medical Services arrive. And you may be able to help save a life. However, even after training, remembering the right first aid steps – and administering them correctly – can be difficult. In order to help you deliver the right care at the right time, we've created this simple step-by-step guide that you can print up and place on your refrigerator, in your car, in your bag or at your desk.</p>
-                <div>
+      </div>
+    </nav>
 
-                </div>
-                <p style="margin-top: 10px;"><strong><span class="bullet">1. </span> Before administering care to an ill or injured person, check the scene and the person. Size up the scene and form an initial impression.</strong></p>
-                <pre> Pause and looks at the scene and the person before responding. Answer the following questions:
+    <div class="container" style="margin-top: 100px;">
+      <h1 style = "font-size: 30px;"> <strong> First Aid Steps</strong></h1>
+      <p style="font-family: Muli,sans-serif;" >
+        By administering immediate care during an emergency, you can help an ill or injured person before EMS, Emergency Medical Services arrive. And you may be able to help save a life. However, even after training, remembering the right first aid steps – and administering them correctly – can be difficult. In order to help you deliver the right care at the right time, we've created this simple step-by-step guide that you can print up and place on your refrigerator, in your car, in your bag or at your desk.
+      </p>
+      <div>
+        <p style="margin-top: 10px;">
+          <strong>
+            <span class="bullet">1. </span>
+            Before administering care to an ill or injured person, check the scene and the person. Size up the scene and form an initial impression.
+          </strong>
+        </p>
+        <pre> Pause and looks at the scene and the person before responding. Answer the following questions:
 
-                    - Is the scene safe to enter?
+          - Is the scene safe to enter?
                     
-                    - What happened?
+          - What happened?
                     
-                    - How many people are involved?
+          - How many people are involved?
                     
-                    - What is my initial impression about the nature of the person’s illness or injury? Does the person have any life-threatening conditions, such as severe, life-threatening bleeding?
+          - What is my initial impression about the nature of the person’s illness or injury? Does the person have any life-threatening conditions, such as severe, life-threatening bleeding?
                     
-                    - Is anyone else available to help? </pre> 
-                    <strong><h1 style="margin-top: 10px"> 2. If the Person is awake and Responsive and there is no severe life-threatening bleeding:</strong>
+          - Is anyone else available to help?
+        </pre> 
+        <strong>
+          <h1 style="margin-top: 10px"> 2. If the Person is awake and Responsive and there is no severe life-threatening bleeding:</h1>
+        </strong>  
 
-                        </h1>
-                  <pre >  - Obtain consent: Tell the person your name, describes type and level of training, states what you thinks is wrong and what you plans to do, and asks permission to provide care.
+        <pre >  - Obtain consent: Tell the person your name, describes type and level of training, states what you thinks is wrong and what you plans to do, and asks permission to provide care.
 
-                    - Tell a bystander to get the AED and first aid kit: Point to a bystander and speak out loud.
+          - Tell a bystander to get the AED and first aid kit: Point to a bystander and speak out loud.
 
-                    - Use appropriate PPE: Put on gloves, if available.
+          - Use appropriate PPE: Put on gloves, if available.
 
-                    - Interview the person: Uses SAMPLE questions to gather more information about signs and symptoms, allergies, medications, pertinent medical history, last food or drink and events leading up to the incident.
+          - Interview the person: Uses SAMPLE questions to gather more information about signs and symptoms, allergies, medications, pertinent medical history, last food or drink and events leading up to the incident.
 
-                    - Conduct a head-to-toe check: Check head and neck, shoulders, chest and abdomen, hips, legs and feet, arms and hands for signs of injury.
+          - Conduct a head-to-toe check: Check head and neck, shoulders, chest and abdomen, hips, legs and feet, arms and hands for signs of injury.
 
-                    - Provide care consistent with knowledge and training according to the conditions you find.
-                                        </pre>
+          - Provide care consistent with knowledge and training according to the conditions you find.
+        </pre>
             
-                </div>
-
-      <br><br>
+      </div>
+    </div>
+    <br><br>
     <div class="content has-text-centered">
 			<p><span><i class="fas fa-copyright"></i></span>
-            Copyright by Rapid Relief  </p>
+        Copyright by Rapid Relief  </p>
 		</div>
-</section>
-<br><br>
-
-
-</body>
+    <br><br>
+  </body>
 </html>
 
       

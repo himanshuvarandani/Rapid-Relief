@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -8,142 +8,113 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar is-transparent">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="">
-                <h1 class="title is-4" style="color:red">RAPID RELIEF</h1>
-          </a>
-          <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <h1 class="title is-4" style="color:red">RAPID RELIEF</h1>
+        </a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-          <div class="navbar-start">
-              <a class="navbar-item" href="/index">
-              Home
-              </a>
-              <a class="navbar-item" href="/index#about_us">
-              About Us
-              </a>
-              <a class="navbar-item" href="/aid">
-              First Aid
-               </a>
-              <a class="navbar-item" href="/index#donate">
-              Donation
-               </a>
-                <a class="navbar-item" href="">
-                  Training and Certificate
-               </a>
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link" href="/volunteer">
-                Volunteer
-              </a>
-              <div class="navbar-dropdown is-boxed">
-                <a class="navbar-item" href="/volunteer#apply">
-                  Apply For Volunteer
-                </a>
-                <a class="navbar-item" href="/volunteer#volunteer_role">
-                  Role of Volunteer
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item" href="">
-                  Elements
-                </a>
-                <a class="navbar-item is-active" href="">
-                  Components
-                </a>
-              </div>
+      </div>
+    
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/index">Home</a>
+          <a class="navbar-item" href="/index#about_us">About Us</a>
+          <a class="navbar-item" href="/aid">First Aid</a>
+          <a class="navbar-item" href="/index#donate">Donation</a>
+          <a class="navbar-item" href="">Training and Certificate</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="/volunteer">Volunteer</a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="/volunteer#apply">Apply For Volunteer</a>
+              <a class="navbar-item" href="/volunteer#volunteer_role">Role of Volunteer</a>
             </div>
-            {% if current_user.is_anonymous %}
-              <a class="navbar-item" href="/lerner_login">
-                Login
-              </a>
-            {% else %}
-              <a class="navbar-item" href="/lerner_logout">
-                Logout
-              </a>
-            {% endif %}
           </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                    <span class="icon">
-                      <i class="fas fa-shopping-cart"></i>
-                    </span>
-                    <span>
-                      Shop
-                    </span>
-                  </a>
-                </p>
-                <p class="control">
-                  <a class="button is-primary" href="/Chatbot">
-                    <span class="icon">
-                      <i class="fas fa-heart"></i>
-                    </span>
-                    <span>General Help</span>
-                  </a>
-                </p>
-              </div>
+          {% if current_user.is_anonymous %}
+            <a class="navbar-item" href="/lerner_login">Login</a>
+          {% else %}
+            <a class="navbar-item" href="/lerner_logout">Logout</a>
+          {% endif %}
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+                  <span class="icon">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                  <span>Shop</span>
+                </a>
+              </p>
+              <p class="control">
+                <a class="button is-primary" href="/Chatbot">
+                  <span class="icon">
+                    <i class="fas fa-heart"></i>
+                  </span>
+                  <span>General Help</span>
+                </a>
+              </p>
             </div>
           </div>
         </div>
-      </nav>
-    <div class="container" styel>
-        <div class="jumbotron" style="background-color: #ebf1e6;margin-top: 30px; ">
-                       <h1 style="color: #6f9bff;">  ROBO HELP </h1>
-                       <hr style="box-shadow: 1px 2px 10px 0px black ;background-color: #14d3af;">
-            <p> Just type <span id="keyword">HELP</span> , or <span id = "keyword"> DISASTER, ACCIDENTS </span> any KEYWORDS TO INITIATE FOR HELP</p>
-            <p>GET FIRST AID TIPS AT TIME OF NEED</p>
-        </div>
-    <div class="row">
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron" style="background-color: #ebf1e6;margin-top: 30px; ">
+        <h1 style="color: #6f9bff;">  ROBO HELP </h1>
+        <hr style="box-shadow: 1px 2px 10px 0px black ;background-color: #14d3af;">
+        <p>
+          Just type <span id="keyword">HELP</span> , or <span id = "keyword"> DISASTER, ACCIDENTS </span> any KEYWORDS TO INITIATE FOR HELP
+        </p>
+        <p>GET FIRST AID TIPS AT TIME OF NEED</p>
+      </div>
+      <div class="row">
         <div class="col-sm-6 offset-sm-3">
-            <div id="chatbox" class="border border-success">
-                <p class="botText"><span>Hi! I am a ROBO!</span></p>
-                <p class="botText"><span>Always for your help</span></p>
-                
-                
-            </div>
-            <div id="userInput">
-                <input id="textInput" class="form-control" type="text" name="msg" placeholder="Type Your Message Here">
-                <input id="buttonInput" class="btn btn-success form-control" type="submit" value="Send">
-            </div>
+          <div id="chatbox" class="border border-success">
+            <p class="botText"><span>Hi! I am a ROBO!</span></p>
+            <p class="botText"><span>Always for your help</span></p>
+          </div>
+          <div id="userInput">
+            <input id="textInput" class="form-control" type="text" name="msg" placeholder="Type Your Message Here">
+            <input id="buttonInput" class="btn btn-success form-control" type="submit" value="Send">
+          </div>
         </div>
+      </div>
     </div>
-<script>
-    function getResponse() {
+    <script>
+      function getResponse() {
         let userText = $("#textInput").val();
         let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
         $("#textInput").val("");
         $("#chatbox").append(userHtml);
         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
         $.get("/get", { msg: userText }).done(function(data) {
-        var botHtml = '<p class="botText "><span>' + data + '</span></p>';
-        $("#chatbox").append(botHtml);
-        document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-});
-}
-    $("#textInput").keypress(function(e) {
-    //if enter key is pressed
-        if(e.which == 13) {
-            
+          var botHtml = '<p class="botText "><span>' + data + '</span></p>';
+          $("#chatbox").append(botHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+        });
+      }
+      $("#textInput").keypress(function(e) {
+        //if enter key is pressed
+        if(e.which == 13) {    
             getResponse();
         }
-    });
-    $("#buttonInput").click(function() {
+      });
+      $("#buttonInput").click(function() {
         getResponse();
-    });
+      });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</div>
-</body>
+  </body>
 </html>
