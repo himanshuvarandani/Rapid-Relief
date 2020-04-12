@@ -87,8 +87,8 @@ def volunteer():
 
 englishBot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 
-#trainer = ChatterBotCorpusTrainer(englishBot)
-#trainer.train("chatterbot.corpus.english") #train the chatter bot for english
+trainer = ChatterBotCorpusTrainer(englishBot)
+trainer.train("chatterbot.corpus.english") #train the chatter bot for english
 
 disaster_words = ["disaster","calamity" , "help", "require", "danger", "catastrophe","adversity"]
 accident_words = ["accident", "injured", "fall","bleeding","save", "blood", "bleed", "car-accident"]
